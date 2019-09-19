@@ -20,9 +20,9 @@ phases:
       - cd terraform-code
       - echo "terraform { " >> provider-output-backend.tf
       - echo "   backend \"s3\" { " >> provider-output-backend.tf
-      - echo "   bucket = \"$datapart.$region.terraform-state-software\"" >> provider-output-backend.tf
-      - echo "   key    = \"$project_name/terraform.tfstate\"" >> provider-output-backend.tf
-      - echo "   region = \"$region\"" >> provider-output-backend.tf
+      - echo "   bucket = \"tf-state-store-bucket"\"" >> provider-output-backend.tf
+      - echo "   key    = \"$CODEBUILD_SRC_DIR/target/$project_name/terraform.tfstate\"" >> provider-output-backend.tf
+      - echo "   region = \"$CODEBUILD_SRC_DIR/target/$region\"" >> provider-output-backend.tf
       - echo "  }" >> provider-output-backend.tf
       - echo "}" >> provider-output-backend.tf
       - cat provider-output-backend.tf
