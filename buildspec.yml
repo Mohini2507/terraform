@@ -21,7 +21,7 @@ phases:
       - echo "terraform { " >> provider-output-backend.tf
       - echo "   backend \"s3\" { " >> provider-output-backend.tf
       - echo "   bucket = \"$datapart.$region.terraform-state-software\"" >> provider-output-backend.tf
-      - echo "   key    = \"$bucketname/terraform.tfstate\"" >> provider-output-backend.tf
+      - echo "   key    = \"$project_name/terraform.tfstate\"" >> provider-output-backend.tf
       - echo "   region = \"$region\"" >> provider-output-backend.tf
       - echo "  }" >> provider-output-backend.tf
       - echo "}" >> provider-output-backend.tf
@@ -29,7 +29,7 @@ phases:
       - . /tmp/aws_cred_export.txt && terraform init
   build:
     commands:
-      - . /tmp/aws_cred_export.txt &&  terraform plan && terraform apply $region $bucketname $env $destroy
+      - . /tmp/aws_cred_export.txt &&  terraform plan && terraform apply $region $project_name $env $destroy
       - echo "Post apply build"
   post_build:
     commands:
