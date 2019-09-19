@@ -1,12 +1,12 @@
 #Creating S3 buckets
 resource "aws_s3_bucket" "ui" {
-  bucket          = "${var.project_name}-${var.env}-ui-bucket" //Using - instead of _, because _ doesn't allow the bucket to be exposesd as website
+  bucket          = "${$CODEBUILD_SRC_DIR/target/$project_name}-${$CODEBUILD_SRC_DIR/target/$env}-ui-bucket" //Using - instead of _, because _ doesn't allow the bucket to be exposesd as website
   acl             = "private"
 
   tags = {
-    Env         = "${var.env}"
-    Project     = "${var.project_name}"
-    Name        = "${var.project_name}-${var.env}-ui-bucket"
+    Env         = "${$CODEBUILD_SRC_DIR/target/$env}"
+    Project     = "${$CODEBUILD_SRC_DIR/target/$project_name}"
+    Name        = "$${$CODEBUILD_SRC_DIR/target/$project_name}-${$CODEBUILD_SRC_DIR/target/$env}-ui-bucket"
     Type        = "bucket"
     Component   = "ui"
   }
