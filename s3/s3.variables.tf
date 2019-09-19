@@ -1,8 +1,8 @@
 # Varaibles specific to the S3 Bucket
-variable "env" {
-  description = "dev"
-}
+# variable "env" {
+#  description = "dev"
+# }
 
-variable "project_name" {
-  description = "s3-cloudfront-assignment2-17092019"
-}
+# variable "project_name" {
+#  description = "s3-cloudfront-assignment2-17092019"
+# }
