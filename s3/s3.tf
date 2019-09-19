@@ -1,12 +1,12 @@
 #Creating S3 buckets
 resource "aws_s3_bucket" "ui" {
-  bucket          = "${$CODEBUILD_SRC_DIR/target/$project_name}-${$CODEBUILD_SRC_DIR/target/$env}-ui-bucket" //Using - instead of _, because _ doesn't allow the bucket to be exposesd as website
+  bucket          = "s3-codebuild-bucket-19092019-dev-ui-bucket" //Using - instead of _, because _ doesn't allow the bucket to be exposesd as website
   acl             = "private"
 
   tags = {
-    Env         = "${$CODEBUILD_SRC_DIR/target/$env}"
-    Project     = "${$CODEBUILD_SRC_DIR/target/$project_name}"
-    Name        = "$${$CODEBUILD_SRC_DIR/target/$project_name}-${$CODEBUILD_SRC_DIR/target/$env}-ui-bucket"
+    Env         = "dev"
+    Project     = "s3-codebuild-bucket-19092019"
+    Name        = "s3-codebuild-bucket-19092019-dev-ui-bucket"
     Type        = "bucket"
     Component   = "ui"
   }
@@ -89,7 +89,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
     }
 
   tags = {
-    Environment = "${var.env}"
+    Environment = "dev"
   }
 
   viewer_certificate {
