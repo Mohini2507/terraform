@@ -11,10 +11,10 @@ source s3/s3.tf
 # Setting up Variables 
 ###############################################################################
 
-TF_PLUGIN_CACHE_DIR="/Users/skrishnan3/Documents/GitHub/POC/.terraform-plugins" terraform init -input=false \
-    --backend-config "bucket=tf-state-store-bucket" \
-    --backend-config "region=$region" \
-    --backend-config "profile=$aws_profile_name"
+#TF_PLUGIN_CACHE_DIR="/Users/skrishnan3/Documents/GitHub/POC/.terraform-plugins" terraform init -input=false \
+#    --backend-config "bucket=tf-state-store-bucket" \
+#    --backend-config "region=$region" \
+#    --backend-config "profile=$aws_profile_name"
 
 ###############################################################################
 # Starting on Terraform Plan
