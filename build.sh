@@ -33,10 +33,10 @@ fi
 echo " Terraform Started... "
 cd ..
 
-TF_PLUGIN_CACHE_DIR="/codebuild/output/src*/src/.terraform-plugins" terraform init -input=false \
-    --backend-config "bucket=tf-state-store-bucket" \
-    --backend-config "region=us-east-1" \
-    --backend-config "profile=default"
+#TF_PLUGIN_CACHE_DIR="/codebuild/output/src*/src/.terraform-plugins" terraform init -input=false \
+#    --backend-config "bucket=tf-state-store-bucket" \
+#    --backend-config "region=us-east-1" \
+#    --backend-config "profile=default"
 
 echo "Terraform Init has been Completed working on Plan now"
 
