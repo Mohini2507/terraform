@@ -18,8 +18,8 @@ phases:
       - terraform version
   build:
     commands:
+      - terraform destroy -input=false -auto-approve -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
       - terraform init -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
      # - terraform plan -var 'env=dev' -out=tfplan -var 'bucket_name=s3-terraform-bucket-23092019' -yes
-      - terraform destroy -input=false -auto-approve -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
       - terraform apply -auto-approve -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
     #  - bash ./build.sh $StackDetailsJSON
