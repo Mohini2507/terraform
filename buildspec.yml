@@ -22,4 +22,4 @@ phases:
      # - terraform destroy -input=false -auto-approve -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
      # - terraform plan -var 'env=dev' -out=tfplan -var 'bucket_name=s3-terraform-bucket-23092019' -yes
       - terraform apply -auto-approve -var env=$env -var bucket_name=$bucket_name
-    #  - bash ./build.sh $StackDetailsJSON
+     # - bash ./build.sh $StackDetailsJSON
