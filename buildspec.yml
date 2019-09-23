@@ -18,7 +18,7 @@ phases:
       - terraform version
   build:
     commands:
-   #   - terraform init
-    #  - terraform plan
+      - terraform init -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
+      - terraform plan -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
       - terraform apply -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
     #  - bash ./build.sh $StackDetailsJSON
