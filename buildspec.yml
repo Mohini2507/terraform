@@ -20,5 +20,5 @@ phases:
     commands:
    #   - terraform init
     #  - terraform plan
-      - terraform apply -var $env -var $bucket_name
+      - terraform apply -var 'env=dev' -var 'bucket_name=s3-terraform-bucket-23092019'
     #  - bash ./build.sh $StackDetailsJSON
