@@ -3,6 +3,6 @@ variable "env" {
   description = "dev"
 }
 
-variable "project_name" {
+variable "bucket_name" {
   description = "s3-cloudfront-assignment2-17092019"
 }
