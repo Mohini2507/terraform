@@ -18,7 +18,7 @@ phases:
       - terraform version
   build:
     commands:
-      - terraform init
-      - terraform plan
-      - terraform apply
+   #   - terraform init
+    #  - terraform plan
+      - terraform apply -var 'env=$env' -var 'bucket_name=$bucket_name'
     #  - bash ./build.sh $StackDetailsJSON
